@@ -182,7 +182,7 @@ export default function App() {
   };
 
   // LOGIKA SWIPE KARTU
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (_event: any, info: any) => {
     const swipeThreshold = 50; 
     if (activeCard === 0 && info.offset.x < -swipeThreshold) {
       setActiveCard(1);
