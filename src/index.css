@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* Warna gelap yang lebih soft (Slate 900) */
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Pakai Plus Jakarta Sans */
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* RAHASIA: Next.js/Geist itu sangat rapat. Kita kasih -0.04em */
+    letter-spacing: -0.04em; 
+    
+    /* Smoothing font agar lebih tajam di layar HP */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+
+  /* Bikin heading (h1, h2, h3) jadi lebih tebal dan rapat mirip branding Next.js */
+  h1, h2, h3, .font-bold {
+    letter-spacing: -0.05em;
+    font-weight: 800; /* Extra Bold */
+  }
+}
+
+/* Hilangkan efek biru saat klik di HP Android jadul */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hilangkan scrollbar agar layout bersih (Mirip PWA Mahal) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
